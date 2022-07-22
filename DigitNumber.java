@@ -7,14 +7,20 @@ class DigitNumber{
       		for(int i=0; i < n; i++){  
                  	for(int j=1; j < (n-i); j++){  
                           if(a[j-1] > a[j]){  
-                                    a[j-1]=a[j-1]+a[j];
-			a[j]=a[j-1]-a[j];
-			a[j-1]=a[j-1]-a[j];
+                                    swap(a,j);
                       	}
                       }  
                 }  
            }
-
+	
+	//swap
+	static void swap (int arr[],int j)
+	{
+		arr[j-1]=arr[j-1]+arr[j];
+		arr[j]=arr[j-1]-arr[j];
+		arr[j-1]=arr[j-1]-arr[j];
+	}
+	
 	//read digits
 	static void readDigits(int a[],int num){
 		Scanner sc=new Scanner(System.in);
